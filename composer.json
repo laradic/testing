@@ -1,0 +1,28 @@
+{
+    "name": "laradic/testing",
+    "description": "A testing package",
+    "keywords": ["laradic", "testing", "laravel"],
+    "license": "MIT",
+    "authors": [
+        {"name": "Robin Radic", "homepage": "https://github.com/robinradic", "email": "robin@radic.nl", "role": "Developer"}
+    ],
+    "autoload": {
+        "psr-4": {
+            "Laradic\\Testing\\": "src"
+        }
+    },
+    "require": {
+        "phpunit/phpunit": "~4.0",
+        "mockery/mockery": "~0.9",
+        "illuminate/container": "~5.2"
+    },
+    "suggest": {
+        "orchestra/testbench": "Testing for Laravel Framework applications (~3.2)"
+    },
+
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
+}
