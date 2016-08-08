@@ -4,7 +4,7 @@
     "keywords": ["laradic", "testing", "laravel"],
     "license": "MIT",
     "authors": [
-        {"name": "Robin Radic", "homepage": "https://github.com/robinradic", "email": "robin@radic.nl", "role": "Developer"}
+        {"name": "Robin Radic", "homepage": "http://robin.radic.nl", "email": "robin@radic.nl", "role": "Developer"}
     ],
     "autoload": {
         "psr-4": {
