@@ -57,7 +57,7 @@ abstract class AbstractTestCase extends OrchestraTestCase
     /**
      * getProvider
      *
-     * @return \Laradic\Support\ServiceProvider
+     * @return \Laradic\Support\ServiceProvider|\Illuminate\Support\ServiceProvider|null
      */
     protected function getServiceProvider()
     {
@@ -69,7 +69,7 @@ abstract class AbstractTestCase extends OrchestraTestCase
 
     protected function getPackagePath($path = null)
     {
-        return is_null($path) ? $this->getPackageRootPath() : $this->getPackageRootPath() . DIRECTORY_SEPARATOR . $path;
+        return null === $path ? $this->getPackageRootPath() : $this->getPackageRootPath() . DIRECTORY_SEPARATOR . $path;
     }
 
     protected function getPackageConfig()
@@ -133,18 +133,15 @@ abstract class AbstractTestCase extends OrchestraTestCase
         $baseDir = base_path($dir);
 
         $app->bind('path.public', function () use ($baseDir) {
-
             return $baseDir . '/public';
         });
 
         $app->bind('path.base', function () use ($baseDir) {
-
             return $baseDir;
         });
 
 
         $app->bind('path.storage', function () use ($baseDir) {
-
             return $baseDir . '/storage';
         });
 
