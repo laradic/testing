@@ -33,7 +33,7 @@ abstract class AbstractTestCase extends OrchestraTestCase
     /**
      * getServiceProviderClass
      *
-     * @return \Laradic\Support\ServiceProvider
+     * @return \Laradic\ServiceProvider\ServiceProvider
      */
     abstract protected function getServiceProviderClass();
 
@@ -45,19 +45,19 @@ abstract class AbstractTestCase extends OrchestraTestCase
     /**
      * registerServiceProvider
      *
-     * @return \Laradic\Support\ServiceProvider
+     * @return \Laradic\ServiceProvider\ServiceProvider
      */
     protected function registerServiceProvider()
     {
         $class = $this->getServiceProviderClass();
-        /** @var \Laradic\Support\ServiceProvider $provider */
+        /** @var \Laradic\ServiceProvider\ServiceProvider $provider */
         return $this->app->register($class);
     }
 
     /**
      * getProvider
      *
-     * @return \Laradic\Support\ServiceProvider|\Illuminate\Support\ServiceProvider|null
+     * @return \Laradic\ServiceProvider\ServiceProvider|\Illuminate\Support\ServiceProvider|null
      */
     protected function getServiceProvider()
     {
