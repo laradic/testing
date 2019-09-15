@@ -12,11 +12,12 @@
 namespace Laradic\Testing\Native;
 
 
+use Laradic\Testing\Native\Traits\WithFaker;
 use Laradic\Testing\Native\Traits\PHPUnitTrait;
 
 abstract class AbstractTestCase extends \PHPUnit\Framework\TestCase
 {
-    use PHPUnitTrait;
+    use WithFaker;
 
     public function testTest()
     {

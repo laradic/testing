@@ -16,7 +16,6 @@ use Laradic\Testing\Util;
  * @author         Laradic Dev Team
  * @copyright      Copyright (c) 2015, Laradic
  * @license        https://tldrlegal.com/license/mit-license MIT License
- * @mixin \Laradic\Testing\Laravel\AbstractTestCase
  */
 trait ServiceProviderTester
 {
@@ -45,7 +44,7 @@ trait ServiceProviderTester
         $method->setAccessible(true);
 
         $msg = "Expected class '$class' to provide a valid list of services.";
-        static::assertInternalType('array', $method->invoke(new $class($this->app)), $msg);
+        static::assertIsArray($method->invoke(new $class($this->app)), $msg);
     }
 
     public function runServiceProviderRegisterTest($class)

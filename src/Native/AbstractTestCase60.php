@@ -9,7 +9,7 @@ namespace Laradic\Testing\Native;
 
 use Laradic\Testing\Native\Traits\PHPUnitTrait;
 
-abstract class AbstractTestCase extends \PHPUnit\Framework\TestCase
+abstract class AbstractTestCase60 extends \PHPUnit\Framework\TestCase
 {
     use PHPUnitTrait;
 

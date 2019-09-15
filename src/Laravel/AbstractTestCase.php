@@ -26,14 +26,14 @@ use Laradic\Testing\Native\Traits\PHPUnitTrait;
 abstract class AbstractTestCase extends OrchestraTestCase
 {
 
-    use PHPUnitTrait, TestHelpers, BindingGetters;
+    use TestHelpers, BindingGetters;
 
     abstract protected function getPackageRootPath();
 
     /**
      * getServiceProviderClass
      *
-     * @return \Laradic\ServiceProvider\ServiceProvider
+     * @return string
      */
     abstract protected function getServiceProviderClass();
 
@@ -42,11 +42,6 @@ abstract class AbstractTestCase extends OrchestraTestCase
         return in_array($providerClass, $this->app->getLoadedProviders(), true);
     }
 
-    /**
-     * registerServiceProvider
-     *
-     * @return \Laradic\ServiceProvider\ServiceProvider
-     */
     protected function registerServiceProvider()
     {
         $class = $this->getServiceProviderClass();
@@ -54,11 +49,6 @@ abstract class AbstractTestCase extends OrchestraTestCase
         return $this->app->register($class);
     }
 
-    /**
-     * getProvider
-     *
-     * @return \Laradic\ServiceProvider\ServiceProvider|\Illuminate\Support\ServiceProvider|null
-     */
     protected function getServiceProvider()
     {
         $this->registerServiceProvider();
