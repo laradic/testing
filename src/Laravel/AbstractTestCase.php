@@ -1,7 +1,6 @@
 <?php
 /**
  * Part of the Laradic PHP packages.
- *
  * License and copyright information bundled with this package in the LICENSE file
  */
 
@@ -9,11 +8,9 @@
 namespace Laradic\Testing\Laravel;
 
 
-
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use Laradic\Testing\Laravel\Traits\BindingGetters;
 use Laradic\Testing\Laravel\Traits\TestHelpers;
-use Laradic\Testing\Native\Traits\PHPUnitTrait;
+use Laradic\Testing\Laravel\Traits\BindingGetters;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
 /**
  * This is the AbstractTestCase.
@@ -56,7 +53,6 @@ abstract class AbstractTestCase extends OrchestraTestCase
     }
 
 
-
     protected function getPackagePath($path = null)
     {
         return null === $path ? $this->getPackageRootPath() : $this->getPackageRootPath() . DIRECTORY_SEPARATOR . $path;
@@ -86,7 +82,6 @@ abstract class AbstractTestCase extends OrchestraTestCase
      * Setup the application environment.
      *
      * @param \Illuminate\Foundation\Application $app
-     *
      * @return void
      */
     protected function getEnvironmentSetUp($app)
