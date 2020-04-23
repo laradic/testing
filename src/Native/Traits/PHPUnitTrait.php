@@ -22,10 +22,10 @@ use InvalidArgumentException;
 trait PHPUnitTrait
 {
 
-    public static function assertIsArray($value)
-    {
-        static::assertThat($value, static::isType('array'));
-    }
+//    public static function assertIsArray($value)
+//    {
+//        static::assertThat($value, static::isType('array'));
+//    }
 
     /**
      * Assert that the element exists in the array.
